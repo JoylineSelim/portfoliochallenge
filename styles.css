@@ -126,3 +126,89 @@ nav a {
   background: #f5f5f5;
   min-height: 100vh;
 }
+
+
+/* Services section */
+
+/* Custom colors matching the image */
+:root {
+  --main-green: #007f5f; /* deep green */
+  --text-gray: #6c757d;
+}
+
+/* Services Section */
+.services {
+  background-color: rgb(241, 241, 241);
+}
+
+.service-card {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.service-icon {
+  font-size: 3rem;
+  color: var(--main-green);
+  display: block;
+  margin: 0 auto;
+}
+
+.card-title {
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.card-title:hover {
+  color: var(--main-green);
+}
+
+.services a {
+  color: var(--main-green);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Skills Section */
+.skills {
+  background-color: #ffffff;
+}
+
+.progress{
+  height: 0.3rem;
+}
+.progress-bar {
+  background-color: var(--main-green) !important;
+  height: 0.3rem;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 992px) {
+  .skills .row {
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-icon {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .skills h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .service-card {
+    margin-bottom: 1.5rem;
+  }
+
+  .skills img {
+    margin-bottom: 20px;
+  }
+}
