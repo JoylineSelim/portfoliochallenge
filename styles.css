@@ -142,15 +142,19 @@ nav a {
 }
 
 .service-card {
-  border: none;
+  border: none !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 1rem;
 }
 
 .service-icon {
   font-size: 3rem;
   color: var(--main-green);
   display: block;
-  margin: 0 auto;
+  margin-bottom: 1rem;
 }
 
 .card-title {
@@ -175,11 +179,16 @@ nav a {
 }
 
 .progress{
-  height: 0.3rem;
+  height: 0.6rem;
+  margin-bottom: 1rem;
+  border-radius: 0.3rem;
+  background-color: #f5f5f5;
 }
+
 .progress-bar {
   background-color: var(--main-green) !important;
-  height: 0.3rem;
+  height: 0.6rem;
+  border-radius: 0.3rem;
 }
 
 /* Responsive Media Queries */
