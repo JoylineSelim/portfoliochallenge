@@ -127,100 +127,148 @@ nav a {
   min-height: 100vh;
 }
 
-
-/* Services section */
-
-/* Custom colors matching the image */
-:root {
-  --main-green: #007f5f; /* deep green */
-  --text-gray: #6c757d;
+/*Do Section*/
+.do-section {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
 }
 
-/* Services Section */
-.services {
-  background-color: rgb(241, 241, 241);
-}
-
-.service-card {
-  border: none !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  padding: 2rem;
+.do-container {
+  max-width: 1100px;
+  margin: 0 auto;
   text-align: center;
-  background-color: #ffffff;
-  border-radius: 1rem;
 }
 
-.service-icon {
-  font-size: 3rem;
-  color: var(--main-green);
-  display: block;
-  margin-bottom: 1rem;
-}
-
-.card-title {
+.do-title {
+  font-size: 32px;
+  margin-bottom: 40px;
   color: #333;
-  cursor: pointer;
-  transition: color 0.3s;
 }
 
-.card-title:hover {
-  color: var(--main-green);
+.do-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.services a {
-  color: var(--main-green);
+.do-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 30px 20px;
+  width: 300px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.do-card:hover {
+  transform: translateY(-5px);
+}
+
+.do-icon {
+  font-size: 40px;
+  color: #007f5f;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.do-heading {
+  font-size: 20px;
+  margin: 10px 0;
+  color: #222;
+}
+
+.do-text {
+  font-size: 14px;
+  color: #666;
+}
+
+.do-more {
+  margin-top: 30px;
+}
+
+.do-more a {
   text-decoration: none;
+  color: #007f5f;
   font-weight: bold;
 }
 
-/* Skills Section */
-.skills {
-  background-color: #ffffff;
+.do-more i {
+  vertical-align: middle;
 }
 
-.progress{
-  height: 0.6rem;
-  margin-bottom: 1rem;
-  border-radius: 0.3rem;
-  background-color: #f5f5f5;
+/* Skills Section */
+.skills-section {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.skills-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+}
+
+.skills-image {
+  flex: 1 1 45%;
+}
+
+.skills-image img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.skills-content {
+  flex: 1 1 45%;
+}
+
+.skills-content small {
+  color: #888;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.skills-content h3 {
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.skills-content p {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.skill {
+  margin-bottom: 20px;
+}
+
+.skill label {
+  display: block;
+  color: #888;
+  margin-bottom: 8px;
 }
 
 .progress-bar {
-  background-color: var(--main-green) !important;
-  height: 0.6rem;
-  border-radius: 0.3rem;
+  background-color: #eee;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
-/* Responsive Media Queries */
-@media (max-width: 992px) {
-  .skills .row {
-    flex-direction: column-reverse;
-  }
+.progress-fill {
+  background-color: #007f5f;
+  height: 100%;
+  border-radius: 5px;
 }
 
-@media (max-width: 768px) {
-  .service-icon {
-    font-size: 2.5rem;
-  }
 
-  h2 {
-    font-size: 1.8rem;
-  }
-
-  .skills h3 {
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .service-card {
-    margin-bottom: 1.5rem;
-  }
-
-  .skills img {
-    margin-bottom: 20px;
-  }
-}
 /* Services Section */
 .services {
   padding: 50px 20px;
@@ -376,8 +424,28 @@ footer {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .services-content {
+  .services-content, .skills-row, .do-grid {
     flex-direction: column;
+  }
+
+  .do-grid{
+    align-items: center;
+  }
+
+  .do-card{
+    width: 90%;
+  }
+
+  .skills-image, .skills-content {
+    flex: 1 1 100%;
+  }
+
+  .do-title, .skills-content h3{
+    font-size: 24px;
+  }
+
+  .skills-content p {
+    font-size: 14px;
   }
 
   .stats {
