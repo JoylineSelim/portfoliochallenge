@@ -8,85 +8,151 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
 <body>
 
-<div class="background">
-  <div class="overlay"></div>
+ <div class="background">
+    <div class="overlay"></div>
 
-  <header id="navbar">
-    <div class="logo">UI Portfolio</div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Pages</a>
-      <a href="#">Contact</a>
-      <a href="#" class="btn-hire">Hire Me</a>
-    </nav>
-  </header>
+    <header id="navbar">
+      <div class="logo">UI Portfolio</div>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <div class="dropdown">
+          <a href="#">Pages <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-content">
+            <a href="#">Portfolio</a>
+            <a href="#">Blog</a>
+            <a href="#">Testimonials</a>
+          </div>
+        </div>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="btn-hire">Hire Me</a>
+        <div class="search-container">
+          <i class="fas fa-search search-icon"></i>
+          <input type="text" class="search-input" placeholder="Search...">
+        </div>
+        <button class="theme-toggle" id="themeToggle">
+          <i class="fas fa-moon"></i>
+        </button>
+      </nav>
+    </header>
 
-  <div class="hero">
-    <h1>Hi, I'm John Watson</h1>
-    <h2>Freelancer | Designer | Developer</h2>
-    <p>I love Graphic design and Photography and have been working on my portfolio since 2016.
-      I can give your business a new creative start right away!</p>
-    <img src="images/your-profile-image.png" alt="Profile">
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1>Hi, I'm John Watson</h1>
+          <span id="typing-animation"></span>
+
+						<script>
+
+						// Initialize the typing animation
+						const typingAnimationElement = document.getElementById('typing-animation');
+
+						// Create an array of typing text
+						const typingTexts = [
+						'Photographer  ',
+						'Web Developer ',
+						'Freelancer ',
+						'Web Designer',
+						];
+
+						// Create a function to display the typing animation for a given text
+						function playTypingAnimation(text) {
+						// Loop through each character and add it to the element
+						for (let i = 0; i < text.length; i++) {
+							setTimeout(() => {
+							typingAnimationElement.textContent += text[i];
+							}, i * 200); // Increase the delay to slow down the typing animation
+						}
+
+						// Once the animation is complete, reset the text and start over
+						setTimeout(() => {
+							typingAnimationElement.textContent = '';
+							playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
+						}, text.length * 200);
+						}
+
+						// Start the typing animation loop
+						playTypingAnimation(typingTexts[0]);
+
+						</script>
+          <style>
+#typing-animation {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 90px;
+  font-weight: bold;
+  color: white;
+  border-right: 2px solid #00ffff;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: blinkCursor 0.8s steps(1) infinite;
+}
+
+@keyframes blinkCursor {
+  0% { border-color: transparent; }
+  50% { border-color: #00ffff; }
+  100% { border-color: transparent; }
+}
+</style>
+
+        <p>I love Graphic design and Photography and have been working on my portfolio since 2016.
+            I Can give your business a new Creative start right away!</p>
+        <div class="hero-buttons">
+          <a href="#" class="btn-hire">Hire Me</a>
+          <a href="#" class="btn-portfolio">My Portfolio</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="/images/background1.png" alt="John Watson">
+      </div>
+    </div>
   </div>
-</div>
 
-<div class="content">
-  <h2>More about me</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
-  <p>...etc...</p>
-</div>
-
-<!-- What I Do Section
-<section class="do py-5">
+<!--biography-->
+<section id="about" class="profile-section">
   <div class="container">
-    <h2 class="text-center mb-5">What I Do For You</h2>
-    <div class="row text-center g-4">
-      
-      <div class="col-md-4">
-        <div class="card do-card">
-          <div class="card-body">
-            <i class="bi bi-laptop do-icon"></i>
-            <h5 class="card-title mt-3">Web Development</h5>
-            <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit accusantium doloremque laudantium.</p>
-          </div>
+    <div class="image-section">
+      <img src="/images/profile.png" alt="Profile Photo" />
+    </div>
+    <div class="content-section">
+      <p class="small-title">MY BIOGRAPHY</p>
+      <h1>A Lead UI Designer & Web Developer Based In UK</h1>
+      <p class="description">
+        I love Graphic design and Photography and have been working on my
+        portfolio since 2016. I can give your business a new Creative start right
+        away! Contact me and we will discuss your projects!
+      </p>
+      <div class="info-grid">
+        <div><strong>Name:</strong> John Watson</div>
+        <div><strong>From:</strong> London, UK</div>
+        <div><strong>Email:</strong> example@mail.com</div>
+        <div><strong>Phone:</strong> +21 234 567 8901</div>
+      </div>
+      <div class="socials">
+        <p><strong>Follow me on</strong></p>
+        <div class="icons">
+          <i class="fab fa-behance"></i>
+          <i class="fab fa-linkedin-in"></i>
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-twitter"></i>
         </div>
       </div>
-
-      <div class="col-md-4">
-        <div class="card do-card">
-          <div class="card-body">
-            <i class="bi bi-phone do-icon"></i>
-            <h5 class="card-title mt-3">App Development</h5>
-            <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit accusantium doloremque laudantium.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card do-card">
-          <div class="card-body">
-            <i class="bi bi-camera do-icon"></i>
-            <h5 class="card-title mt-3">Photography</h5>
-            <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit accusantium doloremque laudantium.</p>
-          </div>
-        </div>
-      </div>
-
-      <div>
-          <a href="#">More services <i class="bi bi-arrow-right"></i></a>
+      <div class="buttons">
+        <button class="hire" onclick="hireMe()">Hire me</button>
+        <button class="download" onclick="downloadCV()">Download CV</button>
       </div>
     </div>
   </div>
 </section>
- -->
+
+
 <!--What I Do Section-->
- <section class="do-section">
+ <section class="do-section" id="services">
   <div class="do-container">
     <h2 class="do-title">What I Do For You</h2>
     
@@ -111,7 +177,7 @@
     </div>
 
     <div class="do-more">
-      <a href="#">More services <i class="bi bi-arrow-right"></i></a>
+      <a href="#moreservices">More services <i class="bi bi-arrow-right"></i></a>
     </div>
   </div>
 </section>
@@ -167,7 +233,7 @@
 
 
   <!-- Services Section -->
-  <section class="services">
+  <section class="services" id="moreservices">
     <div class="services-content">
       <div class="services-list">
         <div class="service-item">
@@ -249,10 +315,26 @@
       <img src="images/brand4.svg" alt="Brand 4">
     </div>
   </section>
+<button id="backToTop" title="Go to top">↑</button>
+<script>
+  const backToTopBtn = document.getElementById("backToTop");
+
+  window.onscroll = function () {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  };
+
+  backToTopBtn.onclick = function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+</script>
 
   <!-- Footer Section -->
   <footer>
-    <div class="footer-content">
+    <div class="footer-content" id="contact">
       <div>
         <h3><i class="fa-brands fa-xing"></i> UI Portfolio</h3>
         <p><i class="fa-solid fa-phone"></i> +12 345 678 900</p>
@@ -281,5 +363,6 @@
 
 
 <script src="script.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
